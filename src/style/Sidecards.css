@@ -1,0 +1,41 @@
+.SideCards {
+    color: aliceblue;
+  }
+  
+  .card {
+    /* Styles for the card container */
+    background-color: #f0f0f0; /* Example: Replace with your desired color */
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-image {
+    /* Styles for the image container */
+    text-align: center;
+  }
+  
+  .card-image img {
+    /* Styles for the image */
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-content {
+    /* Styles for the content container */
+    margin-top: 10px;
+  }
+  
+  .loading-container {
+    /* Styles for the loading container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust as needed */
+  }
+  
+  .loading-spinner {
+    
+    width: 50px;
+  }

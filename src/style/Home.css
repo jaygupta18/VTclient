@@ -1,0 +1,66 @@
+.home {
+    display: flex;
+    background-color: black;
+    color: white;
+  }
+  
+  .loading-data {
+    text-align: center;
+    margin: 20px auto;
+  }
+  
+  .loading-data img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .videos {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   padding: 5px;
+  }
+ /* .home svg{
+    color: aqua;
+    cursor: pointer;
+    position: fixed; 
+    top: 10px; 
+    left: 10px; 
+    z-index: 10; 
+    font-size: 20px; 
+  }
+  
+  .home svg.open {
+    transform: rotate(180deg); 
+  } */
+
+@media(max-width:900px){
+  .videos{
+    display: grid;
+    grid-template-columns: auto auto ;
+    padding: 5px;
+
+  }
+}
+@media(max-width:450px){
+  .videos{
+    display: grid;
+    grid-template-columns: auto ;
+    padding: 5px;
+
+  }
+}
+@media (max-width: 900px) {
+  .side {
+    display: none; /* Hide Component 2 for screens smaller than 900px */
+  }
+
+  .videos {
+    flex: 1 1 100%; /* Allow Component 1 to occupy full width */
+  }
+}
+
+@media (min-width: 901px) {
+  .side {
+    display: block; /* Ensure Component 2 is visible for screens larger than 900px */
+  }
+}
