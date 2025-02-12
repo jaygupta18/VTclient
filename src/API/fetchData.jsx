@@ -7,7 +7,6 @@ export const homeInitState = {
   error: null,
   data: [],
 };
-
 export const homeReducer = (state = homeInitState, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -32,8 +31,9 @@ export const getHomePageData = async (dispatch) => {
     const response = await axios({
       method: "GET",
       url: `${BASE_URL}/videos`,
+     
     });
-    
+    console.log(response);
     dispatch({ type: "UPDATE_SUCCESS", payload: response });
   } catch (error) {
     dispatch({ type: "UPDATE_ERROR" });
@@ -60,16 +60,15 @@ export const searchVideos = async (query) => {
   try {
     const response = await axios({
       method: "GET",
-      url: `https://gist.githubusercontent.com/poudyalanil/ca84582cbeb4fc123a13290a586da925/raw/14a27bd0bcd0cd323b35ad79cf3b493dddf6216b/videos.json`,
-      params: {
-        q: query,
-      },
+      url: `${BASE_URL}/videos/search?query=${query}`,
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.log(error);
   }
 };
+
 
 export const loginUser = async (credentials) => {
   try {
@@ -79,12 +78,25 @@ export const loginUser = async (credentials) => {
       data: credentials,
     });
 
-    return response;
+    if (response.status === 200) {
+      return response; 
+    }
   } catch (error) {
     console.log(error);
   }
 };
- 
+
+export const getUser = async (token) => {
+  
+  try {
+      const res = await axios.get( `${BASE_URL}/user/info`, {
+          headers: { Authorization: token }
+      });
+      return res;
+  } catch (err) {
+      alert("not found");
+  }
+};  
 export const registerUser = async (details) => {
   console.log(details);
   try {

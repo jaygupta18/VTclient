@@ -4,9 +4,10 @@ import { loginUser } from "../API/fetchData";
 import "../style/Login.css";
 
 const LoginComponent = () => {
+   const { login } = useContext(AuthenticationContext);
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [submitted, setSubmitted] = useState(false);
-  const { setEmail, isAuthorized, setIsAuthorized, setName } = useContext(AuthenticationContext);
+   const { setEmail, isAuthorized, setIsAuthorized, setName } = useContext(AuthenticationContext);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -16,10 +17,13 @@ const LoginComponent = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await loginUser(credentials);
-    if (response.status === 200 && response.data.auth) {
-      setIsAuthorized(response.data.auth);
-      setName(response.data.name);
-      setEmail(response.data.email);
+    if (response.data.accessToken) {
+        localStorage.setItem("authToken", response.data.accessToken); 
+       setName(response.data.name);
+       setEmail(response.data.email);
+       setIsAuthorized(true);
+    } else {
+      console.log("Login failed");
     }
     setSubmitted(true);
   };

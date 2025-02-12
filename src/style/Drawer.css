@@ -122,4 +122,16 @@
   .hamburger {
     font-size: 1.8rem;
   }
-  
+  @media (min-width:900px){
+    .drawer-overlay{
+      display: none;
+    }
+    .hamburger{
+      display: none;
+    }
+  }
+  @media(max-width:480px){
+    .drawer{
+      width: 70%;
+    }
+  }

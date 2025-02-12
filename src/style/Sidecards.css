@@ -1,10 +1,10 @@
 .SideCards {
     color: aliceblue;
+    width: 50%;
   }
   
   .card {
-    /* Styles for the card container */
-    background-color: #f0f0f0; /* Example: Replace with your desired color */
+    background-color: #f0f0f0; 
     border-radius: 5px;
     margin: 10px;
     padding: 15px;
@@ -12,27 +12,23 @@
   }
   
   .card-image {
-    /* Styles for the image container */
     text-align: center;
   }
   
   .card-image img {
-    /* Styles for the image */
     max-width: 100%;
     height: auto;
   }
   
-  .card-content {
-    /* Styles for the content container */
+  .card-content { 
     margin-top: 10px;
   }
   
   .loading-container {
-    /* Styles for the loading container */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust as needed */
+    height: 100vh;
   }
   
   .loading-spinner {

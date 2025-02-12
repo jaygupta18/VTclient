@@ -5,7 +5,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #06020a;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -27,8 +27,8 @@
     height: 80px;
     font-size: 24px;
     font-weight: bold;
-    color: #f5c518;
-    background-color: #000;
+    color: #c9cfbf;
+ 
     border-radius: 50%;
     margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
   .user-name {
     font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #fbf6f6;
   }
   
   /* Divider */
@@ -50,14 +50,14 @@
   /* Signed-in information */
   .signed-in {
     font-size: 14px;
-    color: #555;
+    color: #fff8f8;
     margin-bottom: 20px;
   }
   
   /* Logout button */
   .logout-button {
-    background-color: #e53e3e;
-    color: #fff;
+    background-color: #2baf71;
+    color: #f8f4f4;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 20px;
@@ -68,7 +68,7 @@
   }
   
   .logout-button:hover {
-    background-color: #c53030;
+    background-color: #3cb055;
   }
   
   /* Responsive design */

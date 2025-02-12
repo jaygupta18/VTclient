@@ -1,5 +1,3 @@
-// Packages
-
 import { Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import PlayVideo from "../Pages/PlayVideo";
@@ -8,7 +6,9 @@ import Login from "../Pages/Login";
 import UploadData from "../Pages/UploadData";
 import PrivateRoute from "./PrivateRoute";
 import YourVideos from "../Pages/YourVideos";
-
+import Broadcast from "./Broadcasts.jsx";
+import WatchBroadcast from "./WatchBroadcast.jsx"
+import LiveBroadcasts from "./LiveBroadcasts.jsx";
 export default function AllRoute() {
   return (
     <div>
@@ -30,6 +30,12 @@ export default function AllRoute() {
           path="/uploads/:id"
           element={<PrivateRoute component={PlayVideo} target={"uploads"} />}
         />
+        <Route
+        path="/live"
+        element={<Broadcast/>}
+        />
+         <Route path="/live-broadcasts" element={<LiveBroadcasts />} />
+         <Route path="/broadcast/:broadcastId" element={<WatchBroadcast />} />
       </Routes>
     </div>
   );

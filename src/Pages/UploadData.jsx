@@ -155,8 +155,6 @@ export default function UploadData() {
   const [submitted, setSubmitted] = useState(false);
   const { email } = useContext(AuthenticationContext);
 
-  const navigate = useNavigate();
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setDetails({ ...details, [name]: value });
@@ -181,7 +179,6 @@ export default function UploadData() {
     <div className="upload-data">
       <form onSubmit={handleSubmit}>
         <div className="form-container">
-          {/* Email Input */}
           <label htmlFor="email">
             <b>Email Address</b>
           </label>

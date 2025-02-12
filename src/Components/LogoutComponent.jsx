@@ -3,7 +3,8 @@ import "../style/Logout.css";
 import { AuthenticationContext } from "../Contexts/AuthenticationContextProvider";
 
 const LogoutComponent = () => {
-  const { email, setEmail, name, setName, setIsAuthorized } = useContext(AuthenticationContext);
+  const { logout } = useContext(AuthenticationContext);
+  const { email, name } = useContext(AuthenticationContext);
   const fullName = name.split(" ");
   return (
     <div className="logout-div">
@@ -21,11 +22,7 @@ const LogoutComponent = () => {
       </div>
       <button
         className="logout-button"
-        onClick={() => {
-          setIsAuthorized(false);
-          setName("");
-          setEmail("");
-        }}
+        onClick={logout}
       >
         LOGOUT
       </button>

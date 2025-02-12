@@ -13,7 +13,7 @@ export default function SideCards() {
       <div className="loading-container">
         <img
           className="loading-spinner"
-          src={`https://media.tenor.com/wpSo-8CrXqUAAAAj/loading-loading-forever.gif`}
+          src={"/assets/loading.gif"}
           alt="Loading data"
         />
       </div>

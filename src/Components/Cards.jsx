@@ -36,7 +36,7 @@ export default function Cards({
               </div>
             </div>
           </div>
-          {location.href.includes(`http://localhost:5173/search`) ||
+          {
           location.href.includes(`http://localhost:5173/your-videos`) ? (
             <p className="search-description">{description}</p>
           ) : null}

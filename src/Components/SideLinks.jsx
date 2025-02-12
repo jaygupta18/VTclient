@@ -9,10 +9,11 @@ import {
   FaHistory, 
   FaPlayCircle, 
   FaClock, 
-  FaTv 
+  FaTv,
+  FaBroadcastTower // Add this icon for live broadcasts
 } from 'react-icons/fa'; 
 import { IoMdTrendingUp } from "react-icons/io";  
- 
+
 export default function NavigationMenu() {
   return (
     <div className="navigation-menu">
@@ -26,7 +27,7 @@ export default function NavigationMenu() {
 
       <Link>
         <div className="menu-link">
-        <IoMdTrendingUp/>
+           <IoMdTrendingUp/>
           <span>Trending</span>
         </div>
       </Link>
@@ -42,6 +43,13 @@ export default function NavigationMenu() {
         <div className="menu-link">
           <FaVideo />
           <span>Videos</span>
+        </div>
+      </Link>
+
+      <Link to="/live-broadcasts">
+        <div className="menu-link">
+          <FaBroadcastTower />
+          <span>Live Broadcasts</span>
         </div>
       </Link>
 

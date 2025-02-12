@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import "../style/Register.css";
 import { registerUser } from "../API/fetchData";
+import { useNavigate } from "react-router-dom";
+import LoginComponent from "./LoginComponent";
+
 const RegisterComponent = () => {
+  const navigate=useNavigate();
   const [details, setDetails] = useState({ name: "", email: "", password: "" });
   const [submitted, setSubmitted] = useState(false);
   const [response, setResponse] = useState({});
@@ -14,6 +18,7 @@ const RegisterComponent = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await registerUser(details); 
+    console.log(response)
     setResponse(response);
     setSubmitted(true);
   };
@@ -21,6 +26,7 @@ const RegisterComponent = () => {
   useEffect(() => {
     if (submitted) {
       setTimeout(() => {
+        navigate("/login");
         setSubmitted(false);
       }, 1500);
     }
@@ -36,6 +42,7 @@ const RegisterComponent = () => {
             id="name"
             name="name"
             value={details.name}
+            placeholder="Full Name"
             onChange={handleChange}
             required
           />
@@ -47,6 +54,7 @@ const RegisterComponent = () => {
             type="email"
             id="email"
             name="email"
+            placeholder="Email Address"
             value={details.email}
             onChange={handleChange}
             required
@@ -59,6 +67,7 @@ const RegisterComponent = () => {
             type="password"
             id="password"
             name="password"
+            placeholder="Password"
             value={details.password}
             onChange={handleChange}
             required
@@ -72,11 +81,13 @@ const RegisterComponent = () => {
 
       {submitted && (
         <div className="response-message">
-          <p style={{ color: response.registered ? "black" : "red" }}>
-            {response.data?.message}
+          <p style={{ color: response.email ? "black" : "red" }}>
+            Registered , Please Login!
           </p>
-        </div>
+        </div>    
       )}
+      
+      
     </div>
   );
 };
